@@ -1,0 +1,67 @@
+.body-login{
+    min-height: 100vh;
+    position: relative;
+    animation: animate-smooth;
+    animation-duration: 1.5s;
+}
+
+.body-login .section-login{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.card-login{
+    box-shadow: 0px 0px 5px 0px rgb(121, 121, 121); 
+    border-radius: 3px;
+    padding: 1em;
+}
+
+.title-login{
+    text-align: center;
+    font-size: 150%;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: rgb(103, 103, 243);;
+}
+
+.example-full-width{
+    width: 100%;
+}
+
+.form-login{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.form-btn-login{
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-btn-left{
+    cursor: pointer;
+    color: rgb(103, 103, 243);
+    transition: 0.5s ease;
+}
+
+.login-btn-left:hover{
+    opacity: 0.5;
+}
+
+.login-btn-right{
+    cursor: pointer;
+    background-color: rgb(103, 103, 243);
+    padding: 5px;
+    color: #ffffff;
+    border-radius: 3px;
+}
+
+@keyframes animate-smooth{
+    0%{
+        opacity: 0;
+    }
+}

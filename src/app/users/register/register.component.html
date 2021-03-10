@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+
+
+<div class="body-register">
+  <div class="section-register">
+    <div class="card card-register" style="width: 18rem;">
+      <div class="title-register">REGISTER</div>
+      <form class="example-form" [formGroup]="formRegister" autocomplete="off">
+        <div class="form-register">
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [formControl]="emailForm" [errorStateMatcher]="matcher" (keyup.enter)="onRegister()" required>
+            <mat-error *ngIf="emailForm.hasError('email') && !emailForm.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailForm.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Username</mat-label>
+            <input type="text" matInput formControlName="username" (keyup.enter)="onRegister()" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input [type]="checked ? 'password' : 'text'" matInput formControlName="password" (keyup.enter)="onRegister()" required>
+           
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Confirm Password</mat-label>
+            <input [type]="checked ? 'password' : 'text'" matInput formControlName="confirmpassword" (keyup.enter)="onRegister()" required>
+          </mat-form-field>
+          <section class="example-section" style="font-size: 80%;">
+            <mat-checkbox value="checked" class="example-margin" (click)="changeValue(checked)">Show Password</mat-checkbox>
+          </section>
+        </div>
+        <div class="form-btn-register">
+          <div class="register-btn-left" routerLink="/">
+            Have Account ?
+          </div>
+          <div class="register-btn-right">
+            <div class="register-btn-submit" (click)="onRegister()">REGISTER</div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

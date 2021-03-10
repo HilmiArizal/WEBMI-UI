@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+
+
+<div class="body-login">
+  <div class="section-login">
+    <div class="card card-login" style="width: 18rem;">
+      <div class="title-login">LOGIN</div>
+      <br />
+      <form class="example-form" [formGroup]="formLogin" autocomplete="off">
+        <div class="form-login">
+          <mat-form-field class="example-full-width">
+            <mat-label>Username</mat-label>
+            <input type="text" formControlName="username" matInput (keyup.enter)="onLogin()" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input [type]="hide ? 'password' : 'text'" formControlName="password" matInput (keyup.enter)="onLogin()" required>
+            <div mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" style="cursor: pointer;">
+              <mat-icon>
+                {{hide ? 'visibility' : 'visibility_off'}}
+              </mat-icon>
+            </div>
+          </mat-form-field>
+        </div>
+        <div class="form-btn-login">
+          <div class="login-btn-left" routerLink="/user/user-register">
+            Haven't Account ?
+          </div>
+          <div class="login-btn-right">
+            <div class="login-btn-submit" (click)="onLogin()">LOGIN</div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
