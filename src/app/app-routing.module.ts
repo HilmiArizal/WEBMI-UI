@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// import { RegisterComponent } from './users/register/register.component';
-// import { LoginComponent } from './users/login/login.component';
 
 const routes: Routes = [
   {
@@ -13,10 +11,15 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () => import('./users/users.module').then((res) => res.UsersModule)
   },
-  // {
-  //   path: 'register-user',
-  //   component: RegisterComponent
-  // },
+  {
+    path: 'webmi',
+    redirectTo: 'webmi',
+    pathMatch: 'full'
+  },
+  {
+    path: 'webmi',
+    loadChildren: () => import('./pages/pages.module').then((res) => res.PagesModule)
+  }
 ];
 
 @NgModule({
