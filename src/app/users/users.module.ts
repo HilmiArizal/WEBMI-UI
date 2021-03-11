@@ -7,20 +7,22 @@ import { NavbarComponent } from '../components/navbar/navbar.component';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UsersRoutingModule } from './users-routing.module';
 import { material } from '../material/material';
+import { PagesRoutingModule } from '../pages/pages-routing.module';
 
 
 
 @NgModule({
   declarations: [
-    NavbarComponent,
+    // NavbarComponent,
     LoginComponent,
     RegisterComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
-    UsersRoutingModule,
     ReactiveFormsModule,
+    UsersRoutingModule,
+    // PagesRoutingModule,
     material,
     // NgbModule
   ]

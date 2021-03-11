@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<!-- <app-navbar></app-navbar> -->
 
 
 <div class="body-login">
@@ -14,20 +14,28 @@
           </mat-form-field>
           <mat-form-field class="example-full-width">
             <mat-label>Password</mat-label>
-            <input [type]="hide ? 'password' : 'text'" formControlName="password" matInput (keyup.enter)="onLogin()" required>
-            <div mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" style="cursor: pointer;">
+            <input [type]="hide ? 'password' : 'text'" formControlName="password" matInput (keyup.enter)="onLogin()"
+              required>
+            <div mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide" style="cursor: pointer;">
               <mat-icon>
                 {{hide ? 'visibility' : 'visibility_off'}}
               </mat-icon>
             </div>
           </mat-form-field>
+          <div class="warning-login">{{warningLogin}}</div>
+          <div class="warning-login" *ngIf="!loadingLogin"><img src="../../../assets/images/loading.gif"
+              style="width: 20%; border-radius: 100%;"></div>
+          <div class="warning-login" *ngIf="successLogin" style="color: rgb(59, 160, 59);">{{successLogin}}</div>
         </div>
-        <div class="form-btn-login">
-          <div class="login-btn-left" routerLink="/user/user-register">
-            Haven't Account ?
-          </div>
-          <div class="login-btn-right">
-            <div class="login-btn-submit" (click)="onLogin()">LOGIN</div>
+        <div>
+          <div class="login-btn-submit" (click)="onLogin()">LOGIN</div>
+        </div>
+        <hr />
+        <div class="create-account">
+          Not a member ?
+          <div class="create-btn" routerLink="/user/user-register">
+            Create Account
           </div>
         </div>
       </form>
