@@ -1,0 +1,39 @@
+.body-todo{
+
+    margin-top: 10%;
+}
+
+tr .th-todo{
+    background-color: rgb(103, 103, 243);
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+tr .th-todo:nth-child(1){
+    text-align: center;
+}
+
+tr >.th-todo:nth-child(2),
+tr >.th-todo:nth-child(3),
+tr >.th-todo:nth-child(4),
+tr >.th-todo:nth-child(5),
+tr >.th-todo:nth-child(6)
+{
+    width: 20%;
+    text-align: center;
+}
+
+tr .td-todo:nth-child(1){
+    text-align: center;
+}
+
+tr >.td-todo:nth-child(2),
+tr >.td-todo:nth-child(3),
+tr >.td-todo:nth-child(4),
+tr >.td-todo:nth-child(5),
+tr >.td-todo:nth-child(6)
+{
+    width: 20%;
+    text-align: center;
+}
+

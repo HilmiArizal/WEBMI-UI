@@ -16,17 +16,18 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let token = JSON.parse(localStorage.getItem("authToken") || '{}');
-    if(token === ''){
-      this.router.navigate(["/"]);
-    }
+    // let token = JSON.parse(localStorage.getItem("token") || '{}').token;
+    // console.log(token)
+    // if(token === ''){
+    //   this.router.navigate(["/"]);
+    // }
   }
 
   getToken = () => {
-    this.tokenStr = JSON.parse(localStorage.getItem("authToken") || '{}');
+    this.tokenStr = JSON.parse(localStorage.getItem("token") || '{}').token;
 
-    let helper = new JwtHelperService().decodeToken(this.tokenStr);
-    console.log(helper);
+    // let helper = new JwtHelperService().decodeToken(this.tokenStr);
+    // console.log(helper);
   }
 
 
