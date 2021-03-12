@@ -10,17 +10,24 @@ import { TodoComponent } from './pages/todo/todo.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PagesRoutingModule } from './pages/pages-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { PagesComponent } from './pages/pages.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UsersRoutingModule } from './users/users-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    UsersRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

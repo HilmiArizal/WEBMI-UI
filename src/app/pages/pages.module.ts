@@ -5,6 +5,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { HomeComponent } from './home/home.component';
 import { TodoComponent } from './todo/todo.component';
 import { material } from '../material/material';
+import { FormsModule } from '@angular/forms';
 // import { NavbarComponent } from '../components/navbar/navbar.component';
 // import {  } from '@angular/core';
 
@@ -18,7 +19,8 @@ import { material } from '../material/material';
   imports: [
     CommonModule,
     PagesRoutingModule,
-    material
+    material,
+    FormsModule
   ]
 })
 export class PagesModule { }

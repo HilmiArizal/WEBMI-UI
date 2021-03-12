@@ -40,8 +40,9 @@ export class LoginComponent implements OnInit {
           }, 3000);
           this.warningLogin = "";
           this.loadingLogin = false;
+          localStorage.setItem("token", JSON.stringify(response))
           this.formLogin.reset();
-          this.router.navigate(['/user/home']);
+          this.router.navigate(['/webmi/home']);
         },
         error => {
           this.warningLogin = error.error;
