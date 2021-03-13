@@ -11,8 +11,38 @@
           <th class="th-todo" scope="col">Action</th>
         </tr>
       </thead>
-      <tbody>
-        <tr *ngFor="let item of dataTodo; index as i">
+      <tbody *ngFor="let item of dataTodo; index as i">
+        <tr *ngIf="selectedId === i">
+          <td class="td-todo" scope="col"></td>
+          <td class="td-todo" scope="col">
+            <input type="text" placeholder="{{item.name}}" [(ngModel)]="nameEdit" (keyup.enter)="confirmEdit(i)">
+          </td>
+          <td class="td-todo" scope="col">
+            <input type="date" [(ngModel)]="dateEdit" (keyup.enter)="confirmEdit(i)">
+          </td>
+          <td class="td-todo" scope="col">
+            <input type="text" placeholder="{{item.activity}}" [(ngModel)]="activityEdit" (keyup.enter)="confirmEdit(i)">
+          </td>
+          <td class="td-todo" scope="col">
+            <input type="text" placeholder="{{item.description}}" [(ngModel)]="descriptionEdit"
+              (keyup.enter)="confirmEdit(item.idtodo)">
+          </td>
+          <td>
+            <div class="d-flex justify-content-evenly">
+              <div>
+                <span class="material-icons" style="font-size: 120%; cursor: pointer;" (click)="cancelEdit()">
+                  highlight_off
+                </span>
+              </div>
+              <div>
+                <span class="material-icons" style="font-size: 120%; cursor: pointer;" (click)="confirmEdit(i)">
+                  done
+                </span>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr *ngIf="selectedId !== i">
           <td class="td-todo" scope="col">{{i + 1}}</td>
           <td class="td-todo" scope="col">{{item.name}}</td>
           <td class="td-todo" scope="col">{{item.date}}</td>
@@ -21,12 +51,13 @@
           <td>
             <div class="d-flex justify-content-evenly">
               <div>
-                <span class="material-icons" style="font-size: 120%; cursor: pointer;">
+                <span class="material-icons" style="font-size: 120%; cursor: pointer;" (click)="editTodo(i)">
                   settings
                 </span>
               </div>
               <div>
-                <span class="material-icons" style="font-size: 120%; cursor: pointer;">
+                <span class="material-icons" style="font-size: 120%; cursor: pointer;"
+                  (click)="deleteTodo(item.idtodo)">
                   delete
                 </span>
               </div>
@@ -35,12 +66,15 @@
         </tr>
       </tbody>
       <tfoot>
-        <tr *ngFor="let item of dataTodo; index as i">
+        <tr>
           <td class="td-todo" scope="col"></td>
-          <td class="td-todo" scope="col"><input type="text" placeholder="name" [(ngModel)]="name" (keyup.enter)="addTodo()"></td>
+          <td class="td-todo" scope="col"><input type="text" placeholder="name" [(ngModel)]="name"
+              (keyup.enter)="addTodo()"></td>
           <td class="td-todo" scope="col"><input type="date" [(ngModel)]="date" (keyup.enter)="addTodo()"></td>
-          <td class="td-todo" scope="col"><input type="text" placeholder="activity" [(ngModel)]="activity" (keyup.enter)="addTodo()"></td>
-          <td class="td-todo" scope="col"><input type="text" placeholder="description" [(ngModel)]="description" (keyup.enter)="addTodo()"></td>
+          <td class="td-todo" scope="col"><input type="text" placeholder="activity" [(ngModel)]="activity"
+              (keyup.enter)="addTodo()"></td>
+          <td class="td-todo" scope="col"><input type="text" placeholder="description" [(ngModel)]="description"
+              (keyup.enter)="addTodo()"></td>
           <td>
             <div class="d-flex justify-content-evenly">
               <div>
